@@ -484,7 +484,7 @@ void Window::changeEvent(QEvent* event)
     {
       // 8px bigger on each side when maximized on Windows as a frameless
       // window
-      setContentsMargins(8, 8, 8, 8);
+      setContentsMargins(0, 0, 0, 0);
     }
     else
     {
