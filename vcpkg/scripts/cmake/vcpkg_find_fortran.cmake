@@ -62,7 +62,7 @@ function(vcpkg_find_fortran out_var)
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-10.2.0-1-any.pkg.tar.zst"
                         3085e744e716301ba8e4c8a391ab09c2d51e587e0a2df5dab49f83b403a32160f8d713cf1a42c1d962885b4c6ee3b6ed36ef40de15c4be2b69dbc3f12f974c3c
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-binutils-2.37-4-any.pkg.tar.zst"
-                        ff06b2adebe6e9b278b63ca5638ff704750a346faad1cdc40089431b0a308edb6f2a131815e0577673a19878ec1bd8d5a4fa592aa227de769496c1fd3aedbc85
+                        1c2fbb8b94778c562aed01010c06c804d1cc2c446837879e4f1187470259adaecd86699b084c69e254d98201333db69a55126ea2cd0c188e55c9af849c37315a
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-crt-git-8.0.0.5966.f5da805f-1-any.pkg.tar.zst"
                         120c943ce173719e48400fa18299f3458bc9db4cf18bb5a4dda8a91cc3f816510b337a92f7388077c65b50bbbeae9078793891ceaad631d780b10fde19ad3649
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-headers-git-8.0.0.5966.f5da805f-1-any.pkg.tar.zst"
@@ -100,7 +100,7 @@ function(vcpkg_find_fortran out_var)
                         "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-10.2.0-1-any.pkg.tar.zst"
                         7a08c7923f688ca8f06d55e1e91b9059a933ee56e27075ea073e6e58ae220310fb5f79869886a61b6987ab08993c9f962a4bfc50b6ea80473e933ce5551f3930
                         "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-binutils-2.37-4-any.pkg.tar.zst"
-                        4efd5586c344802110ea0061867469a23571df88529d66a943f86add1287f85ef53b6a9a9b16af2cb67bd09e0760a6f290c3b04ba70c0d5861d8a9f79f0ac209
+                        f09ea70810fb337d7f3ec673342ab90df511e6af451e273fe88fe41a2f30bd972b79c830b61bb5388743d00a0ba7885503e143987413db5170c4befffef66303
                         "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-crt-git-8.0.0.5966.f5da805f-1-any.pkg.tar.zst"
                         0142e4a44c59d17380a4fc7b101a2152486781621d5f9f930045b8f9c4bb2c93ea88211e7d8f8f233e0ae09595c6c8bc948ae80b9673f231e715b0d04c8a1e54
                         "https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-headers-git-8.0.0.5966.f5da805f-1-any.pkg.tar.zst"
