@@ -590,7 +590,7 @@ bool Window::load_config()
   // {
   //   setGeometry(geom.value<QRect>());
   //   set = true;
-  }
+  // }
   if (auto fs = Config::get("window/fullscreen"); fs.canConvert<bool>())
   {
     set_fullscreen(fs.toBool());
