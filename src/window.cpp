@@ -586,10 +586,10 @@ void Window::save_state()
 bool Window::load_config()
 {
   bool set = false;
-  if (auto geom = Config::get("window/geometry"); geom.canConvert<QRect>())
-  {
-    setGeometry(geom.value<QRect>());
-    set = true;
+  // if (auto geom = Config::get("window/geometry"); geom.canConvert<QRect>())
+  // {
+  //   setGeometry(geom.value<QRect>());
+  //   set = true;
   }
   if (auto fs = Config::get("window/fullscreen"); fs.canConvert<bool>())
   {
