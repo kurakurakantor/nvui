@@ -492,6 +492,8 @@ void Window::changeEvent(QEvent* event)
     }
 #endif
   QMainWindow::changeEvent(event);
+  //rakan okay let's see if save_state on changeevent works
+  save_state();
 }
 
 bool Window::nativeEvent(const QByteArray& e_type, void* msg, long* result)
@@ -577,7 +579,7 @@ void Window::closeEvent(QCloseEvent* event)
 
 void Window::save_state()
 {
-  // okay baby lets fix this
+  //rakan okay baby lets fix this
   if (!isFullScreen() && !isMaximized())
   {
     Config::set("window/geometry", geometry());
