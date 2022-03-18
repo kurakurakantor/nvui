@@ -463,7 +463,7 @@ void Window::enable_frameless_window()
   {
     showMaximized();
   }
-  else showNormal()
+  else showNormal();
   // showNormal();
 }
 
