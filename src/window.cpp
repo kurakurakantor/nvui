@@ -583,8 +583,7 @@ void Window::closeEvent(QCloseEvent* event)
 void Window::save_state()
 {
   // Config::set("window/geometry", geometry());
-  // [rakan] only save geometry on close if it's on normal window
-  // if (!isFullScreen() && !isMaximized()) Config::set("window/geometry", geometry());
+  // [rakan] use normalGeometry instead, only save geometry on close if it's on normal window
   Config::set("window/geometry", normalGeometry());
   Config::set("window/frameless", is_frameless());
   Config::set("window/fullscreen", isFullScreen());
@@ -606,7 +605,7 @@ bool Window::load_config()
   }
   if (auto maxim = Config::get("window/maximized"); maxim.canConvert<bool>())
   {
-    showMaximized();
+    // showMaximized(); [rakan] the culprit for loading before title bar
     set = true;
   }
   if (auto frameless = Config::get("window/frameless"); frameless.canConvert<bool>())
