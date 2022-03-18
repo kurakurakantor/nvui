@@ -458,7 +458,7 @@ void Window::enable_frameless_window()
   windows_setup_frameless((HWND) winId());
 #endif
   // Kick the window out of any maximized/fullscreen state.
-  // showNormal();
+  showMaximized();
 }
 
 void Window::set_fullscreen(bool enable_fullscreen)
