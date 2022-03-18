@@ -495,8 +495,7 @@ void Window::changeEvent(QEvent* event)
     }
 #endif
   QMainWindow::changeEvent(event);
-  // [rakan] save state on changeEvent once frameless is initiated
-  // if (is_frameless()) save_state();
+  // [rakan] save state on changeEvent so new instance will be on top even before closing
   save_state();
 }
 
@@ -584,7 +583,7 @@ void Window::closeEvent(QCloseEvent* event)
 void Window::save_state()
 {
   // Config::set("window/geometry", geometry());
-  // [rakan] use normalGeometry instead, only save geometry on close if it's on normal window
+  // [rakan] use normalGeometry instead, only save geometry if it's on normal window
   Config::set("window/geometry", normalGeometry());
   Config::set("window/frameless", is_frameless());
   Config::set("window/fullscreen", isFullScreen());
@@ -607,7 +606,7 @@ bool Window::load_config()
   if (auto maxim = Config::get("window/maximized"); maxim.canConvert<bool>())
   {
     // showMaximized();
-    // [rakan] the culprit for loading before title bar, using maximized bool to save max state
+    // [rakan] the culprit for loading before title bar, using maximized bool for title bar to use
     maximized = (maxim.toBool());
     set = true;
   }
