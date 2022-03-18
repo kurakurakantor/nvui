@@ -577,7 +577,12 @@ void Window::closeEvent(QCloseEvent* event)
 
 void Window::save_state()
 {
-  Config::set("window/geometry", geometry());
+  // okay baby lets fix this
+  if (!isFullScreen() && !isMaximized())
+  {
+    Config::set("window/geometry", geometry());
+  }
+  // Config::set("window/geometry", geometry());
   Config::set("window/frameless", is_frameless());
   Config::set("window/fullscreen", isFullScreen());
   Config::set("window/maximized", isMaximized());
