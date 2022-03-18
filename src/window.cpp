@@ -460,7 +460,7 @@ void Window::enable_frameless_window()
   // Kick the window out of any maximized/fullscreen state.
   // showNormal();
   // [rakan] make title bar loads config so it doesn't kick maximized out
-  if (Config::get("window/maximized").toBool()) showMaximized();
+  if (max) showMaximized();
   else showNormal();
 }
 
@@ -608,7 +608,7 @@ bool Window::load_config()
   {
     // showMaximized();
     // [rakan] the culprit for loading before title bar
-    if (maxim.toBool()) showMaximized();
+    bool max = (maxim.toBool());
     set = true;
   }
   if (auto frameless = Config::get("window/frameless"); frameless.canConvert<bool>())
