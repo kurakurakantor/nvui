@@ -461,7 +461,7 @@ void Window::enable_frameless_window()
   // showNormal();
   // [rakan] make title bar loads config so it doesn't kick maximized out
   if (Config::get("window/maximized").toBool()) showMaximized();
-  else showMaximized();
+  else showNormal();
 }
 
 void Window::set_fullscreen(bool enable_fullscreen)
@@ -496,7 +496,8 @@ void Window::changeEvent(QEvent* event)
 #endif
   QMainWindow::changeEvent(event);
   // [rakan] save state on changeEvent once frameless is initiated
-  if (is_frameless()) save_state();
+  // if (is_frameless()) save_state();
+  save_state();
 }
 
 bool Window::nativeEvent(const QByteArray& e_type, void* msg, long* result)
