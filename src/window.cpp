@@ -461,7 +461,7 @@ void Window::enable_frameless_window()
   // showNormal();
   // [rakan] make title bar loads config so it doesn't kick maximized out
   if (Config::get("window/maximized").toBool()) showMaximized();
-  else showNormal();
+  else showMaximized();
 }
 
 void Window::set_fullscreen(bool enable_fullscreen)
