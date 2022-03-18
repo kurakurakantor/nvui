@@ -458,11 +458,8 @@ void Window::enable_frameless_window()
   windows_setup_frameless((HWND) winId());
 #endif
   // Kick the window out of any maximized/fullscreen state.
-  //rakan make title bar loads config
-  if (Config::get("window/maximized").toBool())
-  {
-    showMaximized();
-  }
+  //rakan make title bar loads config so it doesn't kick maximized out
+  if (Config::get("window/maximized").toBool()) showMaximized();
   else showNormal();
   // showNormal();
 }
@@ -498,8 +495,8 @@ void Window::changeEvent(QEvent* event)
     }
 #endif
   QMainWindow::changeEvent(event);
-  //rakan okay let's see if save_state on changeevent works
-  //save_state();
+  //rakan save state on once frameless is initiated
+  if (is_frameless()) save_state();
 }
 
 bool Window::nativeEvent(const QByteArray& e_type, void* msg, long* result)
@@ -585,11 +582,8 @@ void Window::closeEvent(QCloseEvent* event)
 
 void Window::save_state()
 {
-  //rakan okay baby lets fix this
-  if (!isFullScreen() && !isMaximized())
-  {
-    Config::set("window/geometry", geometry());
-  }
+  //rakan only save geometry on close if it's on normal window
+  if (!isFullScreen() && !isMaximized()) Config::set("window/geometry", geometry());
   // Config::set("window/geometry", geometry());
   Config::set("window/frameless", is_frameless());
   Config::set("window/fullscreen", isFullScreen());
