@@ -606,7 +606,8 @@ bool Window::load_config()
   }
   if (auto maxim = Config::get("window/maximized"); maxim.canConvert<bool>())
   {
-    // showMaximized(); [rakan] the culprit for loading before title bar
+    // [rakan] the culprit for loading before title bar
+    showMaximized(maxim.toBool());
     set = true;
   }
   if (auto frameless = Config::get("window/frameless"); frameless.canConvert<bool>())
