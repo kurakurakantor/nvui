@@ -458,8 +458,8 @@ void Window::enable_frameless_window()
   windows_setup_frameless((HWND) winId());
 #endif
   // Kick the window out of any maximized/fullscreen state.
-  //rakan let's fix this
-  if (auto maxim = Config::get("window/maximized"); maxim.canConvert<bool>())
+  //rakan make title bar loads config
+  if (Config::get("window/maximized").toBool())
   {
     showMaximized();
   }
