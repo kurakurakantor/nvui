@@ -458,7 +458,13 @@ void Window::enable_frameless_window()
   windows_setup_frameless((HWND) winId());
 #endif
   // Kick the window out of any maximized/fullscreen state.
-  showMaximized();
+  //rakan let's fix this
+  if (auto maxim = Config::get("window/maximized"); maxim.canConvert<bool>())
+  {
+    showMaximized();
+  }
+  else showNormal()
+  // showNormal();
 }
 
 void Window::set_fullscreen(bool enable_fullscreen)
@@ -493,7 +499,7 @@ void Window::changeEvent(QEvent* event)
 #endif
   QMainWindow::changeEvent(event);
   //rakan okay let's see if save_state on changeevent works
-  save_state();
+  //save_state();
 }
 
 bool Window::nativeEvent(const QByteArray& e_type, void* msg, long* result)
