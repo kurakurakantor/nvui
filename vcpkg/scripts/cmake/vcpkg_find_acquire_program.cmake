@@ -547,7 +547,7 @@ function(vcpkg_find_acquire_program program)
         elseif(CMAKE_HOST_WIN32)
             if(NOT EXISTS "${PKGCONFIG}")
                 set(VERSION 0.29.2-2)
-                set(program_version git-8.0.0.5906.c9a21571-1)
+                set(program_version git-9.0.0.6373.5be8fcd83-1)
                 vcpkg_acquire_msys(
                     PKGCONFIG_ROOT
                     NO_DEFAULT_PACKAGES
