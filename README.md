@@ -1,3 +1,5 @@
+[rakan] fixes: vcpkg for windows, window geometry amnesia, border, title bar color on load to black
+
 # NVUI
 ![first](assets/display/1.png)
 

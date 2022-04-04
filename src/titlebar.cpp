@@ -178,7 +178,9 @@ static const QColor close_bg = {255, 0, 0}; // completely red
 TitleBar::TitleBar(QString text, Window* window)
 : maximized(false),
   foreground("#ffffff"),
-  background("#282c34"),
+  // background("#282c34"),
+  // [rakan] change title bar color on load to black so it matches cmd loading neovim
+  background("#000000"),
   win(window)
 {
   setMouseTracking(true);
