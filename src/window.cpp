@@ -487,7 +487,11 @@ void Window::changeEvent(QEvent* event)
     {
       // 8px bigger on each side when maximized on Windows as a frameless
       // window
-      setContentsMargins(8, 8, 8, 8);
+      // setContentsMargins(8, 8, 8, 8);
+      // [rakan] test if getting the size from system will fix the render problem
+      const int x = GetSystemMetrics(SM_CXFRAME) + GetSystemMetrics(SM_CXPADDEDBORDER);
+      const int y = GetSystemMetrics(SM_CYFRAME) + GetSystemMetrics(SM_CXPADDEDBORDER);
+      setContentsMargins({x, y, x, y});
     }
     else
     {
