@@ -489,9 +489,17 @@ void Window::changeEvent(QEvent* event)
       // window
       // setContentsMargins(8, 8, 8, 8);
       // [rakan] test if getting the size from system will fix the render problem
-      const int x = GetSystemMetrics(SM_CXFRAME) + GetSystemMetrics(SM_CXPADDEDBORDER);
-      const int y = GetSystemMetrics(SM_CYFRAME) + GetSystemMetrics(SM_CXPADDEDBORDER);
-      setContentsMargins({x, y, x, y});
+      // const int x = GetSystemMetrics(SM_CXFRAME) + GetSystemMetrics(SM_CXPADDEDBORDER);
+      // const int y = GetSystemMetrics(SM_CYFRAME) + GetSystemMetrics(SM_CXPADDEDBORDER);
+      // setContentsMargins({x, y, x, y});
+      // [rakan] test if all those win win thingy solves the issue
+      setContentsMargins({ 8, 8, 8, 8 });
+      HRGN WinRgn;
+      RECT winrect;
+      GetClientRect(hwnd, &winrect);
+      WinRgn = CreateRectRgn(8, 8, winrect.right - 8, winrect.bottom - 8);
+      SetWindowRgn(hwnd, WinRgn, true);
+      UpdateWindow(hwnd);
     }
     else
     {
